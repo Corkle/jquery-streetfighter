@@ -28,7 +28,7 @@ function playIntro() {
 }
 
 function playCoolSound() {
-    $('#theme-song')[0].pause();
+//    $('#theme-song')[0].pause();
     $('#cool-sound')[0].volume = 0.5;
     $('#cool-sound')[0].play();
 }
@@ -61,6 +61,7 @@ function main() {
 
     $('body').keydown(function (event) {
             if (event.keyCode == 88) {
+                $('#theme-song')[0].volume = 0;
                 playCoolSound();
                 $('.ryu').children().hide();
                 $('.ryu-cool').show();
@@ -70,6 +71,7 @@ function main() {
             if (event.keyCode == 88) {
                 $('#cool-sound')[0].pause();
                 $('#cool-sound')[0].load();
+                $('#theme-song')[0].volume = .5;
                 $('.ryu').children().hide();
                 $('.ryu-still').show();
             };
