@@ -12,11 +12,24 @@ function playHadouken() {
 function playIntro() {
     $('#theme-song')[0].volume = 0.5;
     $('#theme-song')[0].play();
+    $('.sf-logo').fadeIn(3500, function () {
+        $(this).fadeOut(1000, function () {
+            $('.brought-by').fadeIn(1500, function () {
+                $(this).fadeOut(1000, function () {
+                    $('.jquery-logo').fadeIn(1500, function () {
+                        $(this).fadeOut(1000, function () {
+                            $('.instruction-text').fadeIn(1000);
+                        })
+                    })
+                })
+            })
+        })
+    })
 }
 
 function playCoolSound() {
+    $('#theme-song')[0].pause();
     $('#cool-sound')[0].volume = 0.5;
-
     $('#cool-sound')[0].play();
 }
 
